@@ -16,61 +16,61 @@ const (
 
 type Backdrop struct {
 	spx.Sprite
-	*index
+	*Game
 }
 type Bomb struct {
 	spx.Sprite
-	*index
+	*Game
 }
 type Bullet struct {
 	spx.Sprite
-	*index
+	*Game
 }
 type GameLogo struct {
 	spx.Sprite
-	*index
+	*Game
 }
 type GameOver struct {
 	spx.Sprite
-	*index
+	*Game
 }
 type GameStart struct {
 	spx.Sprite
-	*index
+	*Game
 }
 type HugeEnemy struct {
 	spx.Sprite
-	*index
+	*Game
 	life int
 }
 type MiddleEnemy struct {
 	spx.Sprite
-	*index
+	*Game
 	life int
 }
 type MyAircraft struct {
 	spx.Sprite
-	*index
+	*Game
 	life int
 }
 type Restart struct {
 	spx.Sprite
-	*index
+	*Game
 }
 type SmallEnemy struct {
 	spx.Sprite
-	*index
+	*Game
 	life int
 }
 type TextIntro struct {
 	spx.Sprite
-	*index
+	*Game
 }
 type YouWin struct {
 	spx.Sprite
-	*index
+	*Game
 }
-type index struct {
+type Game struct {
 	spx.Game
 	Backdrop    Backdrop
 	Bomb        Bomb
@@ -88,31 +88,28 @@ type index struct {
 	bombs       int
 	score       int
 }
-//line index.gmx:32:1
-func (this *index) addScore(val int) {
-//line index.gmx:33:1
+//line main.spx:32:1
+func (this *Game) addScore(val int) {
+//line main.spx:33:1
 	this.score += val
-//line index.gmx:34:1
+//line main.spx:34:1
 	if this.score > winscore {
-//line index.gmx:35:1
+//line main.spx:35:1
 		this.Broadcast__0(msgYouWin)
 	}
 }
-//line index.gmx:39:1
-func (this *index) restart() {
-//line index.gmx:40:1
+//line main.spx:39:1
+func (this *Game) restart() {
+//line main.spx:40:1
 	spx.Gopt_Game_Reload(this, "index.json")
-//line index.gmx:41:1
+//line main.spx:41:1
 	this.GameStart.Hide()
-//line index.gmx:42:1
+//line main.spx:42:1
 	this.Broadcast__0(msgBattle)
 }
-//line index.gmx:45
-func (this *index) MainEntry() {
-//line index.gmx:45:1
-	spx.Gopt_Game_Run(this, "assets", &spx.Config{Title: "Aircraft War (by Go+ spx engine)"})
+func (this *Game) MainEntry() {
 }
-func (this *index) Main() {
+func (this *Game) Main() {
 	spx.Gopt_Game_Main(this)
 }
 func (this *Backdrop) Classfname() string {
@@ -646,5 +643,5 @@ func (this *YouWin) Classfname() string {
 	return "YouWin"
 }
 func main() {
-	new(index).Main()
+	new(Game).Main()
 }
