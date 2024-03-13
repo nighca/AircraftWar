@@ -41,5 +41,3 @@ func restart() {
 	GameStart.hide
 	broadcast msgBattle
 }
-
-run "assets", {Title: "Aircraft War (by Go+ spx engine)"}
