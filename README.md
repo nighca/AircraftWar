@@ -9,11 +9,11 @@ AircraftWar - powered by Go+ Builder
 
 ### How to run
 
-- Download Go+ and build it. See https://github.com/goplus/gop#how-to-build.
+- Install Go+. See https://github.com/goplus/gop#how-to-install.
 - Download this game and run.
   * git clone https://github.com/goplus/AircraftWar.git
   * cd AircraftWar
-  * ./run.sh
+  * gop run .
 
 - Download GoMobile and build it. See golang.org/x/mobile.
 - Build Mobile
