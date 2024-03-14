@@ -110,7 +110,7 @@ func (this *Game) restart() {
 func (this *Game) MainEntry() {
 }
 func (this *Game) Main() {
-	spx.Gopt_Game_Main(this)
+	spx.Gopt_Game_Main(this, new(Backdrop), new(Bomb), new(Bullet), new(GameLogo), new(GameOver), new(GameStart), new(HugeEnemy), new(MiddleEnemy), new(MyAircraft), new(Restart), new(SmallEnemy), new(TextIntro), new(YouWin))
 }
 func (this *Backdrop) Classfname() string {
 	return "Backdrop"
