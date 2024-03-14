@@ -1,4 +1,4 @@
-AircraftWar - a game powered by Go+ spx game engine
+AircraftWar - powered by Go+ Builder
 =========
 
 [![Language](https://img.shields.io/badge/language-Go+-blue.svg)](https://github.com/goplus/gop)
