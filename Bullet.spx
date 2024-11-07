@@ -1,4 +1,14 @@
-onTouched => {
+// TODO: support `onTouchStart ["a", "b"], => {}`
+
+onTouchStart "SmallEnemy", => {
+	destroy
+}
+
+onTouchStart "MiddleEnemy", => {
+	destroy
+}
+
+onTouchStart "HugeEnemy", => {
 	destroy
 }
 
